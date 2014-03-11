@@ -1,7 +1,7 @@
 require './lib/todo'
 
 @master_list = []
-@current_list =[]
+@current_list = []
 
 system "clear"
 def main_menu
@@ -31,7 +31,7 @@ def add_list
   puts "\e[94mEnter name of the new list:\e[0m"
   list_name = gets.chomp
   @current_list = List.new(list_name)
-  @master_list << @current_list #List.new(list_name)
+  @master_list << @current_list
   puts "\e[92mList added.\n\n\e[0m"
   list_tasks
 end
@@ -41,7 +41,7 @@ def list_lists
   @master_list.each_with_index do |list, index|
     puts (index + 1).to_s + ". " + @master_list[index].list_name
   end
-  puts "\nSelect list number to go to list"
+  puts "\e[94m\nSelect list number to go to list"
   puts "Press m for main menu\e[0m"
   list_option_choice = gets.chomp
   @current_list.tasks.each_with_index do |list, index|
