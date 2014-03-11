@@ -13,7 +13,7 @@ def main_menu
     list_triangles
   elsif main_choice == 'x'
     system "clear"
-    puts "\e[0mBye bye triangles\n\n"
+    puts "Bye bye triangles\n\n\e[0m"
     exit
   else
     puts "Sorry, that was not a valid option."
@@ -32,9 +32,9 @@ def users_triangle
   triangle = Triangle.new(user_side1, user_side2, user_side3)
   if triangle.triangle? == true
     @list << triangle
-    puts "\nYou have " + triangle.type_of_triangle + " Congratulations!"
+    puts "\nYou have " + triangle.type_of_triangle + " \e[5;96mCongratulations!\e[0m\e[96m"
   else
-    puts "\n" + triangle.type_of_triangle
+    puts "\n\e[5;91m" + triangle.type_of_triangle + "\e[0m\e[96m"
   end
   main_menu
 end
